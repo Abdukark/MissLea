@@ -69,7 +69,7 @@
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Users</p>
                 <!-- Number of users  -->
-                <h4 class="mb-0">{{App\Models\User::count()}}</h4>
+                <h4 class="mb-0">{{App\Models\Profile::count()}}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">

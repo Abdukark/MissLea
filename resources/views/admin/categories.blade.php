@@ -1,7 +1,7 @@
 @extends('admin.partials.navbar')
 
   @section('css')
-  <link href="{{asset('css/dataTables.bootstrap4.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap5.min.css"/>
   @endsection
   @section('breadcrumb')
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">

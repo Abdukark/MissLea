@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -91,7 +92,10 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         $profile = Profile::find($id);
-        $profile->delete();
+        if($profile->delete()){
+            $user = User::find($profile->user_id);
+            $user->delete();
+        }
         return redirect()->route('users');
     }
 }

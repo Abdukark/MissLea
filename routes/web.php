@@ -34,7 +34,15 @@ Route::group([
         return view('welcome');
     });
 
-    Route::get('/dashboard', function () {
+    Route::get('/products', function () {
+        return view('products');
+    });
+
+    Route::get('/cart', function () {
+        return view('cart');
+    });
+
+    Route::get('/admin/dashboard', function () {
         return view('admin/dashboard');
     })->name('dashboard');
 
@@ -62,33 +70,33 @@ Route::group([
 
     Route::get('/admin/color/delete/{id}', [App\Http\Controllers\ColorController::class, 'destroy'])->name('color.destroy');
 
-    Route::get('/users', function () {
+    Route::get('/admin/users', function () {
         return view('admin/users');
     })->name('users');
 
-    Route::get('/users/profile/{id}', [App\Http\Controllers\ProfileController::class, 'show'])->name('users.profile');
+    Route::get('/admin/users/profile/{id}', [App\Http\Controllers\ProfileController::class, 'show'])->name('users.profile');
 
-    Route::get('/users/profile/delete/{id}', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('users.profile.delete');
+    Route::get('/admin/users/profile/delete/{id}', [App\Http\Controllers\ProfileController::class, 'destroy'])->name('users.profile.delete');
 
-    Route::get('/users/profile/edit/{id}',[App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/admin/users/profile/edit/{id}',[App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 
-    Route::post('/users/profile/update/{id}',[App\Http\Controllers\ProfileController::class, 'update'])->name('profile.edit.update');
+    Route::post('/admin/users/profile/update/{id}',[App\Http\Controllers\ProfileController::class, 'update'])->name('profile.edit.update');
 
-    Route::get('/products', function () {
+    Route::get('/admin/products', function () {
         return view('admin/products');
     })->name('products');
 
     Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('product.destroy');
 
-    Route::get('/products/addproducts', function () {
+    Route::get('/admin/products/addproducts', function () {
         return view('admin/addproducts');
     })->name('addproducts');
 
-    Route::get('/products/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
+    Route::get('/admin/products/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
 
-    Route::post('/products/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
+    Route::post('/admin/products/update/{id}', [App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
 
-    Route::post('/products/addproducts', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+    Route::post('/admin/products/addproducts', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
 
     Route::get('/partials/navbar', function () {
         return view('admin/partials/navbar');

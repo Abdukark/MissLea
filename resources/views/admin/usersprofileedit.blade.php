@@ -15,7 +15,7 @@
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
                       <div class="m-2">
-                        <form action="/users/profile/update/{{$profile->id}}" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/users/profile/update/{{$profile->id}}" method="POST" enctype="multipart/form-data">
                           @csrf  
                           <!-- Profile picture image-->
                             <img class="img-account-profile rounded-circle mb-2" src="{{$profile->avatar}}" alt="Avatar" width="100px">

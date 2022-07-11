@@ -16,7 +16,7 @@
   @section('content')
     <div class="main-content p-3">
       <!--- Edit Products Forms -->
-      <form action="/products/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
+      <form action="/admin/products/update/{{$product->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="">

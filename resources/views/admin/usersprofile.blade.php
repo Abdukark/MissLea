@@ -17,7 +17,7 @@
                   class="rounded-circle img-fluid" style="width: 150px;">
                 <h5 class="my-3">{{$profile->name}}</h5>
                 <div class="d-flex justify-content-center mb-2">
-                  <a href="/users/profile/edit/{{$profile->id}}" class="text-white">
+                  <a href="/admin/users/profile/edit/{{$profile->id}}" class="text-white">
                     <button type="button" class="btn btn-primary">
                     Edit
                     </button>

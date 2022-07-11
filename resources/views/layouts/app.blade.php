@@ -15,18 +15,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- CSS only -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    @yield('css')
 </head>
 <body>
 
@@ -41,7 +33,7 @@
         @endif
     </div>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -52,10 +44,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav {{$LSN}}-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('Home') }}</a>
+                            <a class="nav-link" href="/">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('About') }}</a>
+                            <a class="nav-link" href="/products">{{ __('Products') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">{{ __('Contact') }}</a>
@@ -131,7 +123,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="/cart">
                                 <img src="{{ asset('img/Navbar/shopping-bag-svgrepo-com (4).svg') }}" alt="Cart" width="20px">
                                 <span class="badge badge-pill badge-danger"></span>
                             </a>
@@ -155,7 +147,7 @@
         <footer class="container-fluid bg-dark text-white py-3">
             <div class="container-fluid">
                 <div class="row d-flex justify-content-between">
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md mb-3">
                         <div class="text-center">
                             <h3 class="mb-4">
                                 About Us
@@ -166,7 +158,15 @@
                             </p>
                         </div>                   
                     </div>
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md text-center mb-3">
+                        <h3 class="text-center mb-4">
+                            Services
+                        </h3> 
+                        <p><a href="#" class="text-decoration-none text-white">Home</a></p>
+                        <p><a href="#" class="text-decoration-none text-white">About</a></p>
+                        <p><a href="#" class="text-decoration-none text-white">Contact</a></p>
+                    </div>
+                    <div class="col-md text-center mb-3">
                         <h3 class="text-center mb-4">
                             Social Media
                         </h3> 
@@ -185,7 +185,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-3 text-center mb-3">
+                    <div class="col-md text-center mb-3">
                         <h3 class="text-center mb-4">
                             Services
                         </h3> 
@@ -193,7 +193,7 @@
                         <p><a href="#" class="text-decoration-none text-white">About</a></p>
                         <p><a href="#" class="text-decoration-none text-white">Contact</a></p>
                     </div>
-                    <div class="col-md-3 text-center mb-3">
+                    <div class="col-md text-center mb-3">
                         <h3 class="mb-4">
                             Social Media
                         </h3> 
@@ -213,8 +213,23 @@
 
     </div>
 
-    <!-- JavaScript Bundle with Popper -->
-    <script src="{{ asset('js/bootstrap.bundle.min.js')}}" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Scripts -->
+    @yield('scripts')
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/627fd71d7b967b11798f5bb2/1g31m0jc9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

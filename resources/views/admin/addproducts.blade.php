@@ -16,7 +16,7 @@
   @section('content')
     <div class="main-content p-3">
       <!--- Add Products Forms -->
-      <form action="/products/addproducts" method="POST" enctype="multipart/form-data">
+      <form action="/admin/products/addproducts" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="">
